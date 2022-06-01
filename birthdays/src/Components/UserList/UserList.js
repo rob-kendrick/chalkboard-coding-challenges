@@ -5,9 +5,9 @@ import "./UserList.css";
 function UserList({ users }) {
   return (
     <div className="UserList__container">
-      <h1 className="UserList__Header">Birthdays</h1>
-      {users.map((item) => {
-        //return userListItem
+      <h1 className="UserList__header">Birthdays</h1>
+      {users.map((item, index) => {
+        <UserListItem user={item} key={index}></UserListItem>;
       })}
     </div>
   );

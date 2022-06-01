@@ -30,7 +30,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<UserList />}></Route>
+        <Route path="/" element={<UserList users={users} />}></Route>
         <Route
           path="/view/:contactId"
           element={<UserDetails users={users}></UserDetails>}
