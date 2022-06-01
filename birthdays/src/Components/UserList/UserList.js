@@ -6,8 +6,14 @@ function UserList({ users }) {
   return (
     <div className="UserList__container">
       <h1 className="UserList__header">Birthdays</h1>
-      {users.map((item, index) => {
-        <UserListItem user={item} key={index}></UserListItem>;
+      {users.map((item) => {
+        return (
+          <UserListItem
+            data-testid="UL-item"
+            user={item}
+            key={item.id}
+          ></UserListItem>
+        );
       })}
     </div>
   );
