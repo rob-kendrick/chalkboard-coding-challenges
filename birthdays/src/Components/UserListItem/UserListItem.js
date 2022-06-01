@@ -11,7 +11,6 @@ function UserListItem({ user }) {
   //Loading user details by redirecting
   const toggleUserInfo = () => {
     nav(`/view/${uid}`);
-    console.log("toggleuserinfo");
   };
 
   //formatting birthday using moment

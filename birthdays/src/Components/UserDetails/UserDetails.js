@@ -17,7 +17,6 @@ function UserDetails({ users }) {
       if (String(item.id) === paramObj.contactId) {
         //setting the user in state
         setUser(item);
-        console.log("user", user);
       }
     });
   }, [user]);
@@ -43,7 +42,13 @@ function UserDetails({ users }) {
         </div>
       ) : (
         // telling user there is an error, and to return
-        <div className="UserDetails__fail"></div>
+        <div className="UserDetails__fail">
+          <h3>:(</h3>
+          <p>Oops! Something went wrong! 😪 Return home below ↓</p>
+          <button className="UserDetails__btn" onClick={goBack}>
+            Get me out of here!
+          </button>
+        </div>
       )}
     </div>
   );
