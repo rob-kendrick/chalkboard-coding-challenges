@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import UserList from "./UserList";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -49,4 +49,18 @@ test("Renders Contacts successfully", () => {
       <UserList users={mockUsers}></UserList>
     </Router>
   );
+});
+
+test("PROPS: Users names should appear on screen", () => {
+  render(
+    <Router>
+      <UserList users={mockUsers}></UserList>
+    </Router>
+  );
+
+  //Testing for first username
+  expect(screen.getByText(/Pamela Howell/i)).toBeInTheDocument();
+
+  //Sertan Gommers is our final mock user. If this passes, all our users are rendered
+  expect(screen.getByText(/Sertan Gommers/i)).toBeInTheDocument();
 });

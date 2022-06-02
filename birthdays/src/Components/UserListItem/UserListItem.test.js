@@ -1,3 +1,4 @@
+import { getAllByTestId, getByTestId, getByText } from "@testing-library/react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import UserListItem from "./UserListItem";
@@ -36,7 +37,7 @@ test("Each item should render birthday using DD/MM/YYYY format", () => {
     </Router>
   );
   //finding birthday of our mock user
-  const birthday = screen.getByText("26/02/1980");
+  const pamelaBday = screen.getByText("26/02/1980");
   //checking that birthday is in the document
-  expect(birthday).toBeInTheDocument();
+  expect(pamelaBday).toBeInTheDocument();
 });
