@@ -1,6 +1,6 @@
 import { getUsers } from "./apiService";
 
-// We expect an array of objects to be returned. So we test for this below.
+// GetUsers takes the original object returned from API, adds 'id' properties to each item, and returns the final modified array.
 
 test("API Service: Returns Array", async () => {
   const response = await getUsers();
@@ -15,4 +15,10 @@ test("API Service: The array contains objects", async () => {
 test("API Service: Successfully adds id property", async () => {
   const response = await getUsers();
   expect(response[0]).toHaveProperty("id");
+});
+
+test("API Service: Returns a large amount of data as expected", async () => {
+  const response = await getUsers();
+  const minimumNeeded = 100;
+  expect(response.length).toBeGreaterThan(minimumNeeded);
 });
